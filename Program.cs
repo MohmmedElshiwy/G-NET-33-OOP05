@@ -24,9 +24,10 @@ public class Program
 
 
 
+        //        Q2 : Look at the following code and answer the questions below:
+
         /*
 
-                Q2 : Look at the following code and answer the questions below:
 
             interface IEnglishSpeaker
             {
@@ -132,6 +133,60 @@ public class Program
 
 
 
+        // Q4 : Look at the following code and determine the output. Explain why.
+
+        /*
+        
+        
+        class Department { public string Name; }
+        class Employee
+        {
+            public string Title;
+            public Department Dept;
+            public Employee ShallowCopy() => (Employee)this.MemberwiseClone();
+        }
+
+            var e1 = new Employee { Title = "Dev", Dept = new Department { Name = "IT" } };
+            var e2 = e1.ShallowCopy();
+            e2.Title = "QA";
+            e2.Dept.Name = "Testing";
+
+            Console.WriteLine($"{e1.Title} - {e1.Dept.Name}");
+            Console.WriteLine($"{e2.Title} - {e2.Dept.Name}");
+
+        
+        
+        */
+
+
+        /*
+        
+        Result will be :
+
+        Dev - Testing
+        QA - Testing
+
+
+        The ShallowCopy() method uses MemberwiseClone(), which creates a shallow copy of the object.
+
+        Value-type fields are copied normally.
+
+        Reference-type fields copy only the reference (memory address), not the actual object.
+
+
+
+        Title is a string reference, but when we assign "QA" to e2.Title, it creates a new string for e2, so e1.Title remains "Dev".
+
+        Dept is a reference-type object (Department).
+        Because the copy is shallow, both e1 and e2 reference the same Department object.
+
+        So when we change:
+        
+        e2.Dept.Name = "Testing";
+        it modifies the same Department object used by e1.
+        
+        
+        */
 
 
 
