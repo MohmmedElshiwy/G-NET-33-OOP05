@@ -95,6 +95,44 @@ public class Program
 
 
 
+        // Q3 : Explain the difference between a shallow copy and a deep copy. When would you use each one? What is the risk of using a shallow copy when the object has reference-type fields?
+
+
+
+        /*
+        
+
+        -- A Shallow Copy creates a new object, but it copies the values of the fields as they are.
+            If a field is a reference type, only the reference (memory address) is copied, not the actual object.
+
+        -- A Deep Copy creates a new object and also creates copies of all referenced objects, so the new object is   completely independent of the original one.
+
+
+        --- When would you use each one?
+
+       A) Shallow Copy is used when:
+
+            The object contains only value types, or It is acceptable for multiple objects to share the same referenced objects.
+
+       B) Deep Copy is used when:
+
+            The object contains reference-type fields, and
+
+            You want the copied object to be completely independent from the original object.
+
+        
+
+        --- What is the risk of using a shallow copy when the object has reference-type fields?
+
+
+            The risk is that both objects will share the same referenced object in memory.If one object modifies the referenced object, the change will also appear in the other object.
+
+            This can cause unexpected side effects and bugs.
+        */
+
+
+
+
 
 
         #endregion
